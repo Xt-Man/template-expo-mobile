@@ -17,9 +17,12 @@ export function Button({
   isLoading = false,
   ...props
 }: Props) {
+
+  const variantBackground = variant === 'outline' ? ' bg-transparent border' : ' bg-green-700 border-0';
+
   return (
     <GluestackButton
-      className={"w-full h-14 border-green-500 rounded-sm " + variant === 'outline' ? 'bg-transparent border' : 'bg-green-700 border-0'}
+      className={`w-full h-14 border-green-500 rounded ${variantBackground}`}
       $active-bg={variant === 'outline' ? '$gray500' : '$green500'}
       disabled={isLoading}
       {...props}

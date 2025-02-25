@@ -10,13 +10,20 @@ import Logo from "@assets/logo.svg"
 import { Button } from "@components/Button"
 import { Input } from "@components/Input"
 import { ScrollView } from "react-native"
+import { useNavigation } from "@react-navigation/native"
 
 export function SignUp() {
+
+  const navigation = useNavigation()
+
+  function handleGoBack() {
+    navigation.goBack()
+  }
 
   return (
       <ScrollView contentContainerStyle={{ flexGrow: 1}} showsVerticalScrollIndicator={false}>
 
-        <VStack className="flex flex-1 bg-gray-700">
+        <VStack className="flex flex-1 ">
           <Image
             alt="background"
             source={BackgroundImg}
@@ -24,7 +31,7 @@ export function SignUp() {
             className="w-full h-[624] absolute"
           />
 
-          <VStack className="flex flex-1 px-2 pb-4">
+          <VStack className="flex flex-1 px-8 pb-4">
             <Center className="mt-24">
               <Logo />
             </Center>
@@ -51,7 +58,7 @@ export function SignUp() {
                 Já tem uma conta ?
               </Text>
 
-              <Button title="Voltar para o login" variant="outline" />
+              <Button title="Voltar para o login" variant="outline" onPress={handleGoBack} />
             </Center>
           </VStack>
         </VStack>
