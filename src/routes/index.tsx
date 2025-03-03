@@ -1,8 +1,9 @@
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native"; 
 import colors from "tailwindcss/colors";
+import { Box } from "@/components/ui/box";
 
 import { AuthRoutes } from "./auth.routes";
-import { Box } from "@/components/ui/box";
+import { AppRoutes } from "./app.routes";
 
 export function Routes() {
   const theme = DefaultTheme
